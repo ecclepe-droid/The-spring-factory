@@ -28,14 +28,17 @@ func move(): # allows the player to move left and right || use speed and acceler
 	if Input.is_action_pressed("left"):
 		speed -= acceleration # accelerates player left
 		movement = true
+		$AnimationPlayer.play("crawl_left")
 	if Input.is_action_pressed("right"):
 		speed += acceleration # accelerates player right
 		movement = true
+		$AnimationPlayer.play("crawl_right")
 		
 	if (movement==false)&&(on_floor == true):
 		decelerate()
 	else:
 		movement = false
+		$AnimationPlayer.play("standing_still")
 	
 	if(speed>max_speed):
 		speed = max_speed # stops player from going above 10 speed
