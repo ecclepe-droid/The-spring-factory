@@ -6,3 +6,5 @@ res://Scenes/player_armless.tscn
 res://Scripts/spring.gd
 res://Scenes/Spring.tscn
 res://Scripts/springtimer.gd
+res://Scripts/exit.gd
+res://Scenes/game.tscn

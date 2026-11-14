@@ -8,9 +8,11 @@
 size = Vector2(4, 6)
 
 [node name="Spring" type="Area2D" unique_id=1211396072]
+z_index = 9
 script = ExtResource("1_21e6f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786098213]
+visibility_layer = 256
 texture = ExtResource("1_u8n41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094912406]
