@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var spring: Area2D = $"../Spring"
 
 var speed = 0 # the player's speed
 var max_speed = 1 # the player's max speed
@@ -23,10 +24,10 @@ func _process(delta: float) -> void:
 func move(): # allows the player to move left and right || use speed and acceleration for left/right movement
 	move_and_collide(Vector2(speed,0))
 
-	if Input.is_action_pressed("left")&&(on_floor == true):
+	if Input.is_action_pressed("left"):
 		speed -= acceleration # accelerates player left
 		movement = true
-	if Input.is_action_pressed("right")&&(on_floor == true):
+	if Input.is_action_pressed("right"):
 		speed += acceleration # accelerates player right
 		movement = true
 		

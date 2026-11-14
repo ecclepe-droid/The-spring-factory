@@ -1,14 +1,25 @@
 [gd_scene format=3 uid="uid://bh81afk7kw1cs"]
 
+[ext_resource type="Script" uid="uid://bsg5rysccxvv2" path="res://Scripts/spring.gd" id="1_21e6f"]
 [ext_resource type="Texture2D" uid="uid://d0hixp1ahrjfu" path="res://Sprites/Spring.png" id="1_u8n41"]
+[ext_resource type="Script" uid="uid://b1yym3u2xditd" path="res://Scripts/springtimer.gd" id="3_r7xtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(4, 6)
 
 [node name="Spring" type="Area2D" unique_id=1211396072]
+script = ExtResource("1_21e6f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786098213]
 texture = ExtResource("1_u8n41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094912406]
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=587416975]
+autostart = true
+script = ExtResource("3_r7xtq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

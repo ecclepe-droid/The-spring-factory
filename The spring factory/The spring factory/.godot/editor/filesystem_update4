@@ -3,3 +3,6 @@ res://Scenes/level_1.tscn
 res://Scenes/player.tscn
 res://player_armless.tscn
 res://Scenes/player_armless.tscn
+res://Scripts/spring.gd
+res://Scenes/Spring.tscn
+res://Scripts/springtimer.gd
