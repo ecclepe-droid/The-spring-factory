@@ -1,0 +1,97 @@
+[gd_scene format=4 uid="uid://bemi2m21kqu2r"]
+
+[ext_resource type="Texture2D" uid="uid://25cbl58wanrf" path="res://Sprites/Platforms.png" id="1_v36qu"]
+[ext_resource type="Texture2D" uid="uid://d1ek1jc6u352w" path="res://Sprites/walls.png" id="2_cggpd"]
+[ext_resource type="Texture2D" uid="uid://bxespy387ev57" path="res://Sprites/steelbars.png" id="3_055b2"]
+[ext_resource type="PackedScene" uid="uid://ca8mi6jyqkcjx" path="res://Scenes/player_armless.tscn" id="4_2mgoq"]
+[ext_resource type="PackedScene" uid="uid://bh81afk7kw1cs" path="res://Scenes/Spring.tscn" id="5_uhnj4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42uki"]
+texture = ExtResource("1_v36qu")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t7v2y"]
+texture = ExtResource("2_cggpd")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
+texture = ExtResource("3_055b2")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_42uki")
+sources/2 = SubResource("TileSetAtlasSource_t7v2y")
+sources/3 = SubResource("TileSetAtlasSource_ait6c")
+
+[node name="Level 2" type="Node2D" unique_id=967159642]
+
+[node name="platforms" type="TileMapLayer" parent="." unique_id=1317803928]
+tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAAD//wEAAQABAAAAAAAAAAEAAQABAAAAAAABAAEAAQABAAAAAAACAAEAAQABAAAAAAAHAAEAAQACAAAAAAAGAAEAAQABAAAAAAAFAAEAAQABAAAAAAAEAAEAAQABAAAAAAADAAEAAQABAAAAAAAIAP//AQAAAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAALAP//AQACAAAAAAANAPr/AQAAAAAAAAAOAPr/AQABAAAAAAAPAPr/AQABAAAAAAAQAPr/AQABAAAAAAARAPr/AQACAAAAAAAGAPr/AQACAAAAAAAFAPr/AQABAAAAAAAEAPr/AQABAAAAAAAHAPr/AQACAAAAAAADAPr/AQABAAAAAAACAPr/AQABAAAAAAABAPr/AQAAAAAAAAADAPf/AQABAAAAAAAEAPf/AQABAAAAAAAFAPf/AQABAAAAAAACAPf/AQAAAAAAAAAGAPf/AQABAAAAAAALAPX/AQAAAAAAAAAMAPX/AQABAAAAAAANAPX/AQABAAAAAAAOAPX/AQABAAAAAAAPAPX/AQABAAAAAAAQAPX/AQABAAAAAAARAPX/AQABAAAAAAASAPX/AQABAAAAAAATAPX/AQABAAAAAAAUAPX/AQABAAAAAAAVAPX/AQABAAAAAAAWAPX/AQACAAAAAAAWAPj/AQABAAAAAAATAPj/AQAAAAAAAAAUAPj/AQABAAAAAAAVAPj/AQABAAAAAAAXAPj/AQABAAAAAAAYAPj/AQABAAAAAAAZAPj/AQACAAAAAAAZAPv/AQAAAAAAAAAaAPv/AQABAAAAAAAbAPv/AQABAAAAAAAcAPv/AQABAAAAAAAdAPv/AQACAAAAAAAfAPn/AQAAAAAAAAAgAPn/AQABAAAAAAAhAPn/AQABAAAAAAAiAPn/AQABAAAAAAAkAPn/AQABAAAAAAAjAPn/AQABAAAAAAAlAPn/AwAAAAAAAAAlAPT/AgAAAAAAAAAlAPj/AgAAAAEAAAAlAPf/AgAAAAEAAAAlAPb/AgAAAAEAAAAlAPX/AgAAAAEAAAAiAPb/AQACAAAAAAAhAPb/AQABAAAAAAAgAPb/AQABAAAAAAAfAPb/AQABAAAAAAAeAPb/AwAAAAAAAAAcAPT/AwAAAAAAAAAaAPL/AwAAAAAAAAAeAPT/AgAAAAAAAAAcAPL/AgAAAAAAAAAaAPD/AgAAAAAAAAAbAPL/AQABAAAAAAAdAPT/AQABAAAAAAAeAPX/AgAAAAEAAAAcAPP/AgAAAAEAAAAaAPH/AgAAAAEAAAAYAO7/AQACAAAAAAAXAO7/AQABAAAAAAAWAO7/AQABAAAAAAAVAO7/AQABAAAAAAAUAO7/AQABAAAAAAATAO7/AQABAAAAAAASAO7/AQABAAAAAAARAO7/AQABAAAAAAAQAO7/AQABAAAAAAAPAO7/AQABAAAAAAAOAO7/AQABAAAAAAANAO7/AQABAAAAAAAMAO7/AQABAAAAAAALAO7/AQAAAAAAAAAbAOv/AQAAAAAAAAAcAOv/AQABAAAAAAAdAOv/AQABAAAAAAAeAOv/AQABAAAAAAAfAOv/AQABAAAAAAAgAOv/AQABAAAAAAAiAOv/AQABAAAAAAAhAOv/AQABAAAAAAAjAOv/AQACAAAAAAAkAO3/AQAAAAAAAAAlAO3/AQABAAAAAAAmAO3/AQACAAAAAAAnAPD/AQAAAAAAAAAoAPD/AQABAAAAAAApAPD/AQACAAAAAAAlAPP/AQAAAAAAAAAmAPP/AQABAAAAAAAnAPP/AQACAAAAAAApAPf/AQAAAAAAAAAqAPf/AQABAAAAAAArAPf/AQACAAAAAAApAP3/AwAAAAAAAAApAPz/AgAAAAEAAAApAPv/AgAAAAEAAAApAPr/AgAAAAEAAAApAPn/AgAAAAAAAAAqAP3/AQABAAAAAAArAP3/AQABAAAAAAAsAP3/AQABAAAAAAAtAP3/AQABAAAAAAAuAP3/AQABAAAAAAAvAP3/AQACAAAAAAAHAPf/AQACAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="Player-armless" parent="." unique_id=1861444284 instance=ExtResource("4_2mgoq")]
+position = Vector2(271, -89)
+
+[node name="springs" type="Node2D" parent="." unique_id=1956732989]
+
+[node name="Spring3" parent="springs" unique_id=1328026760 instance=ExtResource("5_uhnj4")]
+position = Vector2(101, -46)
+rotation = -1.5707964
+
+[node name="Spring" parent="springs" unique_id=1211396072 instance=ExtResource("5_uhnj4")]
+position = Vector2(52, 5)
+
+[node name="Spring2" parent="springs" unique_id=1018365493 instance=ExtResource("5_uhnj4")]
+position = Vector2(78, -11)
+
+[node name="Spring4" parent="springs" unique_id=1060847729 instance=ExtResource("5_uhnj4")]
+position = Vector2(21, 5)
+
+[node name="Spring5" parent="springs" unique_id=137742070 instance=ExtResource("5_uhnj4")]
+position = Vector2(10, -51)
+
+[node name="Spring6" parent="springs" unique_id=82874994 instance=ExtResource("5_uhnj4")]
+position = Vector2(61, -75)
+
+[node name="Spring7" parent="springs" unique_id=1213057871 instance=ExtResource("5_uhnj4")]
+position = Vector2(182, -91)
+
+[node name="Spring8" parent="springs" unique_id=1112960863 instance=ExtResource("5_uhnj4")]
+position = Vector2(206, -67)
+
+[node name="Spring9" parent="springs" unique_id=596103383 instance=ExtResource("5_uhnj4")]
+position = Vector2(237, -43)
+
+[node name="Spring10" parent="springs" unique_id=633241477 instance=ExtResource("5_uhnj4")]
+position = Vector2(283, -59)
+
+[node name="Spring11" parent="springs" unique_id=1977269462 instance=ExtResource("5_uhnj4")]
+position = Vector2(255, -83)
+
+[node name="Spring12" parent="springs" unique_id=1720555286 instance=ExtResource("5_uhnj4")]
+position = Vector2(236, -99)
+
+[node name="Spring13" parent="springs" unique_id=293748224 instance=ExtResource("5_uhnj4")]
+position = Vector2(221, -115)
+
+[node name="Spring14" parent="springs" unique_id=1754189528 instance=ExtResource("5_uhnj4")]
+position = Vector2(212, -131)
+
+[node name="Spring15" parent="springs" unique_id=2011053814 instance=ExtResource("5_uhnj4")]
+position = Vector2(198, -147)
