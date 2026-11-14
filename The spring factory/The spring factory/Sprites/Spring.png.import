@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5mc67x5spca"
-path="res://.godot/imported/pixilart-drawing.png-1bde2f1722dade17f84990ac2269443e.ctex"
+uid="uid://d0hixp1ahrjfu"
+path="res://.godot/imported/Spring.png-ab6b406d311e236b82be21d2a631ed89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pixilart-drawing.png"
-dest_files=["res://.godot/imported/pixilart-drawing.png-1bde2f1722dade17f84990ac2269443e.ctex"]
+source_file="res://Sprites/Spring.png"
+dest_files=["res://.godot/imported/Spring.png-ab6b406d311e236b82be21d2a631ed89.ctex"]
 
 [params]
 

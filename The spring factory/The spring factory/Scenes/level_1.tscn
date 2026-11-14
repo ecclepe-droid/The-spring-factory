@@ -2,8 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://c1wogva383brd" path="res://Scenes/player.tscn" id="1_vk57k"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vk57k"]
+load_path = "res://.godot/imported/Platforms.png-b677c25384442bf260d9d99548ec8cd0.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ffim"]
+texture = SubResource("CompressedTexture2D_vk57k")
+
+[sub_resource type="TileSet" id="TileSet_yf5fn"]
+sources/2 = SubResource("TileSetAtlasSource_8ffim")
+
 [node name="Level-1" type="Node2D" unique_id=958286223]
 
 [node name="Player" parent="." unique_id=2042348883 instance=ExtResource("1_vk57k")]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=171834384]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=829681856]
+tile_set = SubResource("TileSet_yf5fn")
