@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 0 # the player's speed
 var max_speed = 1 # the player's max speed
-var acceleration = 1.0 # the player's acceleration
+var acceleration = 0.04 # the player's acceleration
 var gravitational_force = 1.5 # the ammount of gravity
 var gravity = 0 # the speed at whitch the player falls: -1 is up and 1 is down
 var sprint_unlocked = true
@@ -64,7 +64,4 @@ func reset_momentum_and_position():
 	print("You Died")
 
 func decelerate():
-	if(speed>0+acceleration):
-		speed -= acceleration # accelerates player left until speed = 0
-	elif(speed<0-acceleration): 
-		speed += acceleration # accelerates player right until speed = 0
+	speed = 0

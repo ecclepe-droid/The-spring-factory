@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ca8mi6jyqkcjx"]
+
+[ext_resource type="Texture2D" uid="uid://fwsqfsaerfj" path="res://Sprites/robotarmless.png" id="1_bbju8"]
+[ext_resource type="Script" uid="uid://bumbcvtx26gbq" path="res://Scripts/player.gd" id="1_iij5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqgi1"]
+size = Vector2(3, 13)
+
+[node name="Player-armless" type="CharacterBody2D" unique_id=1861444284]
+script = ExtResource("1_iij5q")
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=581579967]
+position = Vector2(0.5, 1.5)
+texture = ExtResource("1_bbju8")
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1190387070]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_dqgi1")
+
+[node name="SprintTimer" type="Timer" parent="." unique_id=1015756503]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=485270179]
+zoom = Vector2(6, 6)
