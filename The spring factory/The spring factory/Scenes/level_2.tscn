@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b2s2kr1e3pvau" path="res://Sprites/level/steelbars.png" id="3_055b2"]
 [ext_resource type="PackedScene" uid="uid://ca8mi6jyqkcjx" path="res://Scenes/player_armless.tscn" id="4_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://bh81afk7kw1cs" path="res://Scenes/Spring.tscn" id="5_uhnj4"]
+[ext_resource type="Texture2D" uid="uid://djtaoj2s4c1ny" path="res://Sprites/Player/legs.png" id="6_cggpd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mgoq"]
 texture = ExtResource("1_v36qu")
@@ -65,6 +66,9 @@ sources/0 = SubResource("TileSetAtlasSource_2mgoq")
 sources/4 = SubResource("TileSetAtlasSource_uhnj4")
 sources/5 = SubResource("TileSetAtlasSource_vcilj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(10, 9)
+
 [node name="Level 2" type="Node2D" unique_id=967159642]
 
 [node name="platforms" type="TileMapLayer" parent="." unique_id=1317803928]
@@ -120,3 +124,12 @@ position = Vector2(212, -131)
 
 [node name="Spring15" parent="springs" unique_id=2011053814 instance=ExtResource("5_uhnj4")]
 position = Vector2(198, -147)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=698531709]
+position = Vector2(354, -26.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1429473642]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1214858144]
+texture = ExtResource("6_cggpd")

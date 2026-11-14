@@ -1,19 +1,100 @@
 [gd_scene format=3 uid="uid://bh81afk7kw1cs"]
 
 [ext_resource type="Script" uid="uid://bsg5rysccxvv2" path="res://Scripts/spring.gd" id="1_21e6f"]
-[ext_resource type="Texture2D" uid="uid://d0hixp1ahrjfu" path="res://Sprites/level/Spring.png" id="1_u8n41"]
 [ext_resource type="Script" uid="uid://b1yym3u2xditd" path="res://Scripts/springtimer.gd" id="3_r7xtq"]
+[ext_resource type="Texture2D" uid="uid://c2cx2l2wgnowq" path="res://Sprites/level/springanimation (2).png" id="3_y4tom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(4, 6)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5o67"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(0, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c8ih"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(5, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lpbi"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(10, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g1m1"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(15, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d5gl"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(20, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmf5t"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(25, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vio3h"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(30, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojtby"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(35, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akroj"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(40, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8un7p"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(45, 0, 5, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxscp"]
+atlas = ExtResource("3_y4tom")
+region = Rect2(50, 0, 5, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5o67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c8ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lpbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5g1m1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d5gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmf5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vio3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojtby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akroj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8un7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxscp")
+}],
+"loop": 0,
+"name": &"spring",
+"speed": 40.0
+}]
+
 [node name="Spring" type="Area2D" unique_id=1211396072]
 z_index = 9
 script = ExtResource("1_21e6f")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786098213]
-visibility_layer = 256
-texture = ExtResource("1_u8n41")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094912406]
 shape = SubResource("RectangleShape2D_g4v7s")
@@ -21,6 +102,10 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Timer" type="Timer" parent="." unique_id=587416975]
 autostart = true
 script = ExtResource("3_r7xtq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557494549]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"spring"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
