@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://bumbcvtx26gbq" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cu5mc67x5spca" path="res://Sprites/player.png" id="2_cvnsp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-radius = 2.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w36e"]
+size = Vector2(3, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=2042348883]
 script = ExtResource("1_cvnsp")
@@ -14,8 +13,8 @@ script = ExtResource("1_cvnsp")
 texture = ExtResource("2_cvnsp")
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=869215869]
-position = Vector2(1, 0)
-shape = SubResource("CapsuleShape2D_cvnsp")
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_2w36e")
 
 [node name="SprintTimer" type="Timer" parent="." unique_id=616585874]
 

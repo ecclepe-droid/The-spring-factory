@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var speed = 0 # the player's speed
-var max_speed = 10 # the player's max speed
-var acceleration = 0.04 # the player's acceleration
-var gravitational_force = 2 # the ammount of gravity
+var max_speed = 1 # the player's max speed
+var acceleration = 1.0 # the player's acceleration
+var gravitational_force = 1.5 # the ammount of gravity
 var gravity = 0 # the speed at whitch the player falls: -1 is up and 1 is down
 var sprint_unlocked = true
 var on_floor = false
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	on_floor = false
 func move(): # allows the player to move left and right || use speed and acceleration for left/right movement
 	move_and_collide(Vector2(speed,0))
-	
+
 	if Input.is_action_pressed("left")&&(on_floor == true):
 		speed -= acceleration # accelerates player left
 		movement = true
@@ -47,13 +47,13 @@ func move(): # allows the player to move left and right || use speed and acceler
 			speed = max_speed * -1
 
 func fall(): # allows the player to move up and down || use gravity for the falling and jumping
-	gravity += 0.2 * gravitational_force
+	gravity += 0.1 * gravitational_force
 	var collision = move_and_collide(Vector2(0,gravity))
 	if collision:
 		gravity = 0
 		on_floor = true
 	if Input.is_action_just_pressed("jump")&&on_floor == true:
-		gravity -= 10
+		gravity -= 2.5
 		on_floor = false
 
 func reset_momentum_and_position():
