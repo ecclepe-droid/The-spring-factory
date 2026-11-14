@@ -20,11 +20,12 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Respawn")):
 		reset_momentum_and_position()
 	fall() # triggers fall function
+	bounce(delta) # triggers bounce function
 	move() # triggers move function
 	on_floor = false
 func move(): # allows the player to move left and right || use speed and acceleration for left/right movement
 	move_and_collide(Vector2(speed,0))
-
+	
 	if Input.is_action_pressed("left"):
 		speed -= acceleration # accelerates player left
 		movement = true
@@ -54,8 +55,8 @@ func fall(): # allows the player to move up and down || use gravity for the fall
 	if collision:
 		gravity = 0
 		on_floor = true
-	if Input.is_action_just_pressed("jump")&&jumpunlocked == true:
-		gravity -= 2.5
+	if Input.is_action_just_pressed("jump")&&on_floor == true:
+		gravity -= 3
 		on_floor = false
 
 func reset_momentum_and_position():
@@ -67,3 +68,4 @@ func reset_momentum_and_position():
 
 func decelerate():
 	speed = 0
+
