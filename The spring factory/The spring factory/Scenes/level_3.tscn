@@ -1,0 +1,48 @@
+[gd_scene format=4 uid="uid://cmkky1v7sy5wh"]
+
+[ext_resource type="PackedScene" uid="uid://c1wogva383brd" path="res://Scenes/player.tscn" id="1_s8nj6"]
+[ext_resource type="Texture2D" uid="uid://by2jgrhlr3f7o" path="res://Sprites/level/Platforms.png" id="2_vwg62"]
+[ext_resource type="Texture2D" uid="uid://b2s2kr1e3pvau" path="res://Sprites/level/steelbars.png" id="3_qf6rc"]
+[ext_resource type="Texture2D" uid="uid://d02yvaohkjsl3" path="res://Sprites/level/walls.png" id="4_53xsp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5e78q"]
+texture = ExtResource("2_vwg62")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l4wr6"]
+texture = ExtResource("3_qf6rc")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rvg2"]
+texture = ExtResource("4_53xsp")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5e78q")
+sources/1 = SubResource("TileSetAtlasSource_l4wr6")
+sources/2 = SubResource("TileSetAtlasSource_5rvg2")
+
+[node name="Level 3" type="Node2D" unique_id=1863008995]
+
+[node name="Player" parent="." unique_id=2042348883 instance=ExtResource("1_s8nj6")]
+position = Vector2(394.1806, -32.31571)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1175049366]
+tile_map_data = PackedByteArray("AAAuAP3/AAAAAAAAAAAvAP3/AAABAAAAAAAwAP3/AAABAAAAAAAxAP3/AAABAAAAAAAyAP3/AAABAAAAAAAzAP3/AAABAAAAAAA0AP3/AAACAAAAAAA1APr/AAAAAAAAAAA2APr/AAABAAAAAAA3APr/AAABAAAAAAA4APr/AAACAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")

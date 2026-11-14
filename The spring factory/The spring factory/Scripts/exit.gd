@@ -17,9 +17,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == 'Player' or body.name == 'Player-armless':
+		print('test')
 		if level == 1:
 			get_tree().change_scene_to_packed(LEVEL_2)
-			self.position.x = 378
-			self.position.y = -32.5
 			level += 1
 			

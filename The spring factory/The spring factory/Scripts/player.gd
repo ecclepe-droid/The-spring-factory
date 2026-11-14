@@ -9,7 +9,7 @@ var gravity = 0 # the speed at whitch the player falls: -1 is up and 1 is down
 var sprint_unlocked = true
 var on_floor = false
 var movement = false
-var jumpunlocked = true
+var jumpunlocked = false
 
 func _ready() -> void:
 	var sprint_timer = $SprintTimer
@@ -28,11 +28,13 @@ func move(): # allows the player to move left and right || use speed and acceler
 	if Input.is_action_pressed("left"):
 		speed -= acceleration # accelerates player left
 		movement = true
-		$AnimationPlayer.play("crawl_left")
+		if jumpunlocked == false:
+			$AnimationPlayer.play("crawl_left")
 	if Input.is_action_pressed("right"):
 		speed += acceleration # accelerates player right
 		movement = true
-		$AnimationPlayer.play("crawl_right")
+		if jumpunlocked == false:
+			$AnimationPlayer.play("crawl_right")
 		
 	if (movement==false)&&(on_floor == true):
 		decelerate()
@@ -69,4 +71,5 @@ func reset_momentum_and_position():
 
 func decelerate():
 	speed = 0
-	$AnimationPlayer.play("standing_still")
+	if jumpunlocked == false:
+		$AnimationPlayer.play("standing_still")
