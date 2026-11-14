@@ -9,7 +9,7 @@ var gravity = 0 # the speed at whitch the player falls: -1 is up and 1 is down
 var sprint_unlocked = true
 var on_floor = false
 var movement = false
-var jumpunlocked = true
+var jumpunlocked = false
 
 func _ready() -> void:
 	var sprint_timer = $SprintTimer
