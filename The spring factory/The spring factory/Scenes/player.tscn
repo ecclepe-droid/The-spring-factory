@@ -3,24 +3,14 @@
 [ext_resource type="Script" uid="uid://bumbcvtx26gbq" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cu5mc67x5spca" path="res://Sprites/player.png" id="2_cvnsp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynxr4"]
-size = Vector2(3, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_imf32"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w36e"]
 size = Vector2(3, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=2042348883]
 z_index = 10
 script = ExtResource("1_cvnsp")
 
-[node name="PlayerArea" type="Area2D" parent="." unique_id=1659409430]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" unique_id=1806147480]
-shape = SubResource("RectangleShape2D_ynxr4")
-
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1925297678]
-position = Vector2(-0.5, 0)
-scale = Vector2(0.969, 1)
 texture = ExtResource("2_cvnsp")
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=869215869]
