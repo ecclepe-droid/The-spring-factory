@@ -11,11 +11,9 @@ script = ExtResource("1_ljsmn")
 level_1 = NodePath("")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984903231]
-position = Vector2(266, 39.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1228574435]
-position = Vector2(266, 39.5)
 texture = ExtResource("2_650lm")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

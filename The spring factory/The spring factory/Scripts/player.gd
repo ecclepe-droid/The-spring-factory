@@ -38,7 +38,6 @@ func move(): # allows the player to move left and right || use speed and acceler
 		decelerate()
 	else:
 		movement = false
-		$AnimationPlayer.play("standing_still")
 	
 	if(speed>max_speed):
 		speed = max_speed # stops player from going above 10 speed
@@ -70,3 +69,4 @@ func reset_momentum_and_position():
 
 func decelerate():
 	speed = 0
+	$AnimationPlayer.play("standing_still")
