@@ -1,24 +1,38 @@
 [gd_scene format=3 uid="uid://ca8mi6jyqkcjx"]
 
-[ext_resource type="Texture2D" uid="uid://fwsqfsaerfj" path="res://Sprites/robotarmless.png" id="1_bbju8"]
 [ext_resource type="Script" uid="uid://bumbcvtx26gbq" path="res://Scripts/player.gd" id="1_iij5q"]
+[ext_resource type="Texture2D" uid="uid://clb0clae8sofx" path="res://Sprites/Player/revised player.png" id="2_iij5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqgi1"]
-size = Vector2(3, 13)
+size = Vector2(6, 10)
+
+[sub_resource type="Animation" id="Animation_8jeyj"]
+resource_name = "crawl_left"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba7no"]
+_data = {
+&"crawl_left": SubResource("Animation_8jeyj")
+}
 
 [node name="Player-armless" type="CharacterBody2D" unique_id=1861444284]
 z_index = 10
 script = ExtResource("1_iij5q")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=581579967]
-position = Vector2(0.5, 1.5)
-texture = ExtResource("1_bbju8")
+position = Vector2(-9, -9)
+texture = ExtResource("2_iij5q")
+centered = false
+hframes = 7
+vframes = 4
+frame = 7
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="." unique_id=1190387070]
-position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_dqgi1")
 
 [node name="SprintTimer" type="Timer" parent="." unique_id=1015756503]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=485270179]
 zoom = Vector2(6, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1313786140]
+libraries/ = SubResource("AnimationLibrary_ba7no")
