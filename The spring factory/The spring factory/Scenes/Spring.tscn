@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bh81afk7kw1cs"]
 
 [ext_resource type="Script" uid="uid://bsg5rysccxvv2" path="res://Scripts/spring.gd" id="1_21e6f"]
-[ext_resource type="Texture2D" uid="uid://d0hixp1ahrjfu" path="res://Sprites/Spring.png" id="1_u8n41"]
+[ext_resource type="Texture2D" uid="uid://d0hixp1ahrjfu" path="res://Sprites/level/Spring.png" id="1_u8n41"]
 [ext_resource type="Script" uid="uid://b1yym3u2xditd" path="res://Scripts/springtimer.gd" id="3_r7xtq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
