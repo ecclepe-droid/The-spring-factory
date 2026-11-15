@@ -1,20 +1,19 @@
-[gd_scene format=3 uid="uid://dad8k1tcxq8wt"]
+[gd_scene format=3 uid="uid://cw2r0ccw6vyus"]
 
-[ext_resource type="Script" uid="uid://bsvy0bassg6ns" path="res://Scripts/exit.gd" id="1_ljsmn"]
-[ext_resource type="Texture2D" uid="uid://dyqj24a58u5f5" path="res://Sprites/level/door.png" id="2_650lm"]
+[ext_resource type="Script" uid="uid://bsvy0bassg6ns" path="res://Scripts/exit.gd" id="1_2pwiy"]
+[ext_resource type="Texture2D" uid="uid://dyqj24a58u5f5" path="res://Sprites/level/door.png" id="2_snr18"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(12, 17)
 
-[node name="exit" type="Area2D" unique_id=1318501363 node_paths=PackedStringArray("level_1")]
-script = ExtResource("1_ljsmn")
-level_1 = NodePath("")
+[node name="level_2_exit" type="Area2D" unique_id=1318501363]
+script = ExtResource("1_2pwiy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984903231]
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1228574435]
-texture = ExtResource("2_650lm")
+texture = ExtResource("2_snr18")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

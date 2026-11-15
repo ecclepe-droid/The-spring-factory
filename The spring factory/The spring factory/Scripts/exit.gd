@@ -3,7 +3,7 @@ var level = 1
 @export var level_1: Node2D
 
 const LEVEL_ONE_PACKED = preload("res://Scenes/level_1.tscn")
-const LEVEL_2 = preload("uid://bemi2m21kqu2r")
+const LEVEL_TWO_PACKED = preload("res://Scenes/level_2.tscn")
 	
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +19,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == 'Player' or body.name == 'Player-armless':
 		print('test')
 		if level == 1:
-			get_tree().change_scene_to_packed(LEVEL_2)
-			level += 1
-			
+			get_tree().change_scene_to_packed(LEVEL_ONE_PACKED)
