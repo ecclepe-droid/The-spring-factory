@@ -1,11 +1,13 @@
 [gd_scene format=4 uid="uid://cmkky1v7sy5wh"]
 
-[ext_resource type="Texture2D" uid="uid://crgvsn6f0o40p" path="res://Sprites/level/pixil-frame-1.png" id="1_qf6rc"]
+[ext_resource type="Texture2D" uid="uid://del256d72vq62" path="res://Sprites/level/pixil-frame-1.png" id="1_qf6rc"]
 [ext_resource type="PackedScene" uid="uid://c1wogva383brd" path="res://Scenes/player.tscn" id="1_s8nj6"]
-[ext_resource type="Texture2D" uid="uid://25cbl58wanrf" path="res://Sprites/level/Platforms.png" id="2_vwg62"]
-[ext_resource type="Texture2D" uid="uid://bxespy387ev57" path="res://Sprites/level/steelbars.png" id="3_qf6rc"]
-[ext_resource type="Texture2D" uid="uid://d1ek1jc6u352w" path="res://Sprites/level/walls.png" id="4_53xsp"]
+[ext_resource type="Texture2D" uid="uid://by2jgrhlr3f7o" path="res://Sprites/level/Platforms.png" id="2_vwg62"]
+[ext_resource type="Texture2D" uid="uid://b2s2kr1e3pvau" path="res://Sprites/level/steelbars.png" id="3_qf6rc"]
+[ext_resource type="Texture2D" uid="uid://d02yvaohkjsl3" path="res://Sprites/level/walls.png" id="4_53xsp"]
 [ext_resource type="PackedScene" uid="uid://bh81afk7kw1cs" path="res://Scenes/Spring.tscn" id="5_vwg62"]
+[ext_resource type="PackedScene" uid="uid://cw2r0ccw6vyus" path="res://Scenes/level_2_exit.tscn" id="7_5e78q"]
+[ext_resource type="Script" uid="uid://c8pbosjjv478b" path="res://Scenes/level_3_exit.gd" id="8_l4wr6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53xsp"]
 texture = ExtResource("1_qf6rc")
@@ -83,7 +85,6 @@ tile_map_data = PackedByteArray("AAD6//T/AAADAAEAAAD6//X/AAADAAEAAAD6//b/AAADAAE
 tile_set = SubResource("TileSet_5e78q")
 
 [node name="Player" parent="." unique_id=2042348883 instance=ExtResource("1_s8nj6")]
-position = Vector2(197, -16)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1175049366]
 tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAADAAEAAAACAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAACAAAAAAAJAPz/AAAAAAAAAAAKAPz/AAABAAAAAAALAPz/AAACAAAAAAANAPP/AAAAAAAAAAAOAPP/AAABAAAAAAAQAPP/AAABAAAAAAAPAPP/AAABAAAAAAARAPP/AAABAAAAAAASAPP/AQAAAAAAAAASAPT/AgAAAAEAAAASAPX/AgAAAAEAAAASAPb/AgAAAAEAAAASAPf/AgAAAAEAAAASAPj/AgAAAAEAAAASAPn/AgAAAAEAAAASAPr/AgAAAAEAAAASAPv/AgAAAAEAAAASAPz/AgAAAAEAAAASAP3/AgAAAAEAAAASAP7/AgAAAAEAAAASAP//AgAAAAEAAAASAAAAAgAAAAEAAAASAAEAAgAAAAEAAAASAAIAAgAAAAEAAAASAAMAAgAAAAIAAAASAPL/AgAAAAEAAAASAPH/AgAAAAEAAAASAPD/AgAAAAEAAAASAO//AgAAAAEAAAASAO7/AgAAAAEAAAASAO3/AQAAAAAAAAASAOz/AgAAAAEAAAAQAO3/AAAAAAAAAAARAO3/AAABAAAAAAASAOv/AgAAAAEAAAASAOr/AgAAAAEAAAASAOn/AgAAAAEAAAASAOj/AgAAAAEAAAASAOf/AgAAAAEAAAAMAOf/AAACAAAAAAALAOf/AAABAAAAAAAKAOf/AAAAAAAAAAAOAOj/AAACAAAAAAANAOj/AAAAAAAAAAASAOb/AgAAAAEAAAASAOX/AgAAAAEAAAASAOT/AQAAAAAAAAARAOT/AAABAAAAAAAQAOT/AAABAAAAAAAVAO3/AAACAAAAAAAUAO3/AAABAAAAAAATAO3/AAABAAAAAAAXAPD/AAAAAAAAAAAYAPD/AAABAAAAAAAZAPD/AAABAAAAAAAaAPD/AAABAAAAAAAbAPD/AAABAAAAAAAcAPD/AAACAAAAAAAVAPf/AAABAAAAAAAVAPv/AAAAAAAAAAAWAPf/AAACAAAAAAAWAPv/AAABAAAAAAAXAPv/AAABAAAAAAAYAPv/AAACAAAAAAAUAPf/AAAAAAAAAAAbAPj/AgAAAAIAAAAbAPT/AgAAAAAAAAAbAPX/AgAAAAEAAAAbAPb/AgAAAAEAAAAbAPf/AgAAAAEAAAAYAP//AAACAAAAAAAXAP//AAAAAAAAAAAXAAQAAAAAAAAAAAAYAAQAAAACAAAAAAAcAAQAAAAAAAAAAAAdAAQAAAABAAAAAAAeAAQAAAABAAAAAAAfAAQAAAABAAAAAAAgAAQAAAACAAAAAAA=")
@@ -102,3 +103,6 @@ rotation = -1.5707964
 [node name="Spring4" parent="." unique_id=30807220 instance=ExtResource("5_vwg62")]
 position = Vector2(155, -85)
 rotation = 1.5707964
+
+[node name="level_2_exit" parent="." unique_id=1318501363 instance=ExtResource("7_5e78q")]
+script = ExtResource("8_l4wr6")
