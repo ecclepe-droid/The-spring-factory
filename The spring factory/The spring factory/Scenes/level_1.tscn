@@ -112,6 +112,7 @@ position = Vector2(179, 21)
 [node name="Player-armless" parent="." unique_id=1861444284 instance=ExtResource("4_7p6j4")]
 
 [node name="exit" type="Area2D" parent="." unique_id=154174310]
+position = Vector2(266, 40)
 script = ExtResource("3_xrdnt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit" unique_id=230335948]

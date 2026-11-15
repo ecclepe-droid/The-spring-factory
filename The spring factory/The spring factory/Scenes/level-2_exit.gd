@@ -4,7 +4,7 @@ var level = 1
 
 const LEVEL_ONE_PACKED = preload("res://Scenes/level_1.tscn")
 const LEVEL_TWO_PACKED = preload("res://Scenes/level_2.tscn")
-const LEVEL_THREE_PACKED = preload("res://Scenes/level_2.tscn")
+const LEVEL_THREE_PACKED = preload("res://Scenes/level_3.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,5 +16,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == 'Player' or body.name == 'Player-armless':
+	if body.name == 'Player' or body.name == 'Player-armless'&&body.jumpunlocked==true:
 		get_tree().change_scene_to_packed(LEVEL_THREE_PACKED)
