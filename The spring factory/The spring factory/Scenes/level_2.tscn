@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://del256d72vq62" path="res://Sprites/level/pixil-frame-1.png" id="1_055b2"]
 [ext_resource type="Texture2D" uid="uid://by2jgrhlr3f7o" path="res://Sprites/level/Platforms.png" id="1_v36qu"]
-[ext_resource type="PackedScene" uid="uid://dad8k1tcxq8wt" path="res://Scenes/level_1_exit.tscn" id="2_2mgoq"]
 [ext_resource type="Texture2D" uid="uid://d02yvaohkjsl3" path="res://Sprites/level/walls.png" id="2_cggpd"]
 [ext_resource type="Texture2D" uid="uid://b2s2kr1e3pvau" path="res://Sprites/level/steelbars.png" id="3_055b2"]
 [ext_resource type="Script" uid="uid://f2m2xhecgr0p" path="res://Scenes/level-2_exit.gd" id="3_uhnj4"]
@@ -10,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bh81afk7kw1cs" path="res://Scenes/Spring.tscn" id="5_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://djtaoj2s4c1ny" path="res://Sprites/Player/legs.png" id="6_cggpd"]
 [ext_resource type="Script" uid="uid://bxcpoqnirdl5w" path="res://Scripts/legs.gd" id="9_t7v2y"]
-[ext_resource type="Script" uid="uid://dv3hnj2vt8ihe" path="res://Scripts/pluslegs.gd" id="11_ait6c"]
-[ext_resource type="Texture2D" uid="uid://dyqj24a58u5f5" path="res://Sprites/level/door.png" id="9_uhnj4"]
+[ext_resource type="Texture2D" uid="uid://cveu2otyoiq8p" path="res://Sprites/level/door.png" id="9_uhnj4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bl0du"]
 texture = ExtResource("1_055b2")
@@ -196,5 +194,6 @@ shape = SubResource("RectangleShape2D_42uki")
 position = Vector2(112, -72)
 texture = ExtResource("9_uhnj4")
 
+[connection signal="body_entered" from="legs" to="legs" method="_on_body_entered"]
 [connection signal="area_entered" from="exit" to="exit" method="_on_area_entered"]
 [connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]

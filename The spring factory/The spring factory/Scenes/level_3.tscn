@@ -105,4 +105,5 @@ position = Vector2(155, -85)
 rotation = 1.5707964
 
 [node name="level_2_exit" parent="." unique_id=1318501363 instance=ExtResource("7_5e78q")]
+position = Vector2(258, 23.5)
 script = ExtResource("8_l4wr6")
