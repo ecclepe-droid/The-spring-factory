@@ -28,13 +28,11 @@ func move(): # allows the player to move left and right || use speed and acceler
 	if Input.is_action_pressed("left"):
 		speed -= acceleration # accelerates player left
 		movement = true
-		if jumpunlocked == false:
-			$AnimationPlayer.play("crawl_left")
+		$AnimationPlayer.play("crawl_left")
 	if Input.is_action_pressed("right"):
 		speed += acceleration # accelerates player right
 		movement = true
-		if jumpunlocked == false:
-			$AnimationPlayer.play("crawl_right")
+		$AnimationPlayer.play("crawl_right")
 		
 	if (movement==false)&&(on_floor == true):
 		decelerate()
@@ -58,9 +56,6 @@ func fall(): # allows the player to move up and down || use gravity for the fall
 	if collision:
 		gravity = 0
 		on_floor = true
-	if Input.is_action_just_pressed("jump")&&on_floor == true&&jumpunlocked == true:
-		gravity -= 3
-		on_floor = false
 
 func reset_momentum_and_position():
 	gravity = 0
@@ -71,5 +66,4 @@ func reset_momentum_and_position():
 
 func decelerate():
 	speed = 0
-	if jumpunlocked == false:
-		$AnimationPlayer.play("standing_still")
+	$AnimationPlayer.play("standing_still")

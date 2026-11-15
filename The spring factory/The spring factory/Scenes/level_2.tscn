@@ -1,14 +1,16 @@
 [gd_scene format=4 uid="uid://bemi2m21kqu2r"]
 
-[ext_resource type="Texture2D" uid="uid://crgvsn6f0o40p" path="res://Sprites/level/pixil-frame-1.png" id="1_055b2"]
-[ext_resource type="Texture2D" uid="uid://25cbl58wanrf" path="res://Sprites/level/Platforms.png" id="1_v36qu"]
+[ext_resource type="Texture2D" uid="uid://del256d72vq62" path="res://Sprites/level/pixil-frame-1.png" id="1_055b2"]
+[ext_resource type="Texture2D" uid="uid://by2jgrhlr3f7o" path="res://Sprites/level/Platforms.png" id="1_v36qu"]
 [ext_resource type="PackedScene" uid="uid://dad8k1tcxq8wt" path="res://Scenes/level_1_exit.tscn" id="2_2mgoq"]
-[ext_resource type="Texture2D" uid="uid://d1ek1jc6u352w" path="res://Sprites/level/walls.png" id="2_cggpd"]
-[ext_resource type="Texture2D" uid="uid://bxespy387ev57" path="res://Sprites/level/steelbars.png" id="3_055b2"]
+[ext_resource type="Texture2D" uid="uid://d02yvaohkjsl3" path="res://Sprites/level/walls.png" id="2_cggpd"]
+[ext_resource type="Texture2D" uid="uid://b2s2kr1e3pvau" path="res://Sprites/level/steelbars.png" id="3_055b2"]
 [ext_resource type="Script" uid="uid://f2m2xhecgr0p" path="res://Scenes/level-2_exit.gd" id="3_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://ca8mi6jyqkcjx" path="res://Scenes/player_armless.tscn" id="4_2mgoq"]
 [ext_resource type="PackedScene" uid="uid://bh81afk7kw1cs" path="res://Scenes/Spring.tscn" id="5_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://djtaoj2s4c1ny" path="res://Sprites/Player/legs.png" id="6_cggpd"]
+[ext_resource type="Script" uid="uid://bxcpoqnirdl5w" path="res://Scripts/legs.gd" id="9_t7v2y"]
+[ext_resource type="Script" uid="uid://dv3hnj2vt8ihe" path="res://Scripts/pluslegs.gd" id="11_ait6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bl0du"]
 texture = ExtResource("1_055b2")
@@ -172,11 +174,23 @@ position = Vector2(212, -131)
 [node name="Spring15" parent="springs" unique_id=2011053814 instance=ExtResource("5_uhnj4")]
 position = Vector2(198, -147)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=698531709]
+[node name="legs" type="Area2D" parent="." unique_id=698531709]
 position = Vector2(354, -26.5)
+script = ExtResource("9_t7v2y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1429473642]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="legs" unique_id=1429473642]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1214858144]
+[node name="Sprite2D" type="Sprite2D" parent="legs" unique_id=1214858144]
 texture = ExtResource("6_cggpd")
+
+[node name="pluslegs" type="Label" parent="." unique_id=387588049]
+offset_left = 342.0
+offset_top = -14.0
+offset_right = 369.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 4
+script = ExtResource("11_ait6c")
+
+[connection signal="body_entered" from="legs" to="legs" method="_on_body_entered"]
+[connection signal="body_entered" from="legs" to="pluslegs" method="_on_legs_body_entered"]
